@@ -5,6 +5,7 @@
 #= require jquery.autosize
 #= require jquery.validate
 #= require jquery.timeago
+#= require jquery.atwho
 #= require nprogress
 #= require campo
 #= require_tree ./plugins
