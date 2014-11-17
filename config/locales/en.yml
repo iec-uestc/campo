@@ -34,6 +34,8 @@ en:
             username:
               format: may only contain alphanumeric characters or dashes and cannot
                 begin with a dash
+            password_confirmation:
+              unmatched: passwords unmatched
   admin:
     attachments:
       index:
@@ -324,6 +326,7 @@ en:
           or expired, please resend.
     new:
       choose_a_password: Choose a password
+      confirm_your_password: Confirm your password
       create_account: Create account
       pick_a_username: Pick a username
       sign_up: Sign up
