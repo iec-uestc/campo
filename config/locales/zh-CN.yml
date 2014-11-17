@@ -33,6 +33,8 @@ zh-CN:
               format: "无效的邮件格式"
             username:
               format: "只能使用字母、数字或 - 号，并且不能以 - 号开头"
+            password_confirmation:
+              unmatched: "确认密码与确认值不匹配"
   admin:
     attachments:
       index:
@@ -318,6 +320,7 @@ zh-CN:
         no_comment_yet: "还没有评论"
     new:
       choose_a_password: "选一个密码"
+      password_confirmation: "确认密码"
       create_account: "创建帐号"
       pick_a_username: "挑一个用户名"
       sign_up: "注册"
