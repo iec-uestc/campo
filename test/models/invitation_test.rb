@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class InvitationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should generate unique code" do
+    assert_not_nil create(:invitation).code
+  end
 end
