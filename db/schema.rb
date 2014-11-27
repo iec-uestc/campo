@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127061008) do
+ActiveRecord::Schema.define(version: 20141127082413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 20141127061008) do
     t.boolean  "send_comment_web",   default: true
     t.boolean  "send_mention_email", default: true
     t.boolean  "send_mention_web",   default: true
+    t.integer  "invitation_limit"
   end
 
 end
