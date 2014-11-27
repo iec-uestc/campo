@@ -33,4 +33,15 @@ class UserTest < ActiveSupport::TestCase
     token = user.confirmation_token
     assert_equal user, User.find_by_confirmation_token(token)
   end
+
+  test "should generate invitation" do
+    user = create(:user)
+    assert_not_nil user.generate_invitation
+  end
+
+  test "shouldn't generate invitation out of limit" do
+    user = create(:user)
+    user.invitation_limit = 0
+    assert_equal nil, user.generate_invitation
+  end
 end

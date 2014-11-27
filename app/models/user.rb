@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
 
+  before_create :set_invitation_limit
+
   scope :unlocked, -> { where(locked_at: nil) }
   scope :locked, -> { where.not(locked_at: nil) }
 
@@ -80,5 +82,15 @@ class User < ActiveRecord::Base
     User.find_by(id: user_id) if timestamp > 1.hour.ago
   rescue ActiveSupport::MessageVerifier::InvalidSignature
     nil
+  end
+
+  def generate_invitation
+    invitations.create if invitations.count < invitation_limit
+  end
+
+  private
+
+  def set_invitation_limit
+    self.invitation_limit = rand(2..5)
   end
 end
