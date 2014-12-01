@@ -20,6 +20,7 @@ en:
         bio: Bio
         created_at: Created at
         email: Email
+        invitation_code: Invitation code
         locale: Locale
         name: Name
         password: Password
@@ -329,6 +330,7 @@ en:
       sign_up: Sign up
       your_email: Your email
       your_full_name: Your full name
+      your_invitation_code: Your invitation code
     passwords:
       edit:
         password_reset: Password reset

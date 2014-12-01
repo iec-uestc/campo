@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   gravtastic secure: true, default: 'wavatar', rating: 'G', size: 48
   mount_uploader :avatar, AvatarUploader
 
+  attr_accessor :invitation_code
+
   has_secure_password
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -25,6 +27,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
 
   before_create :set_invitation_limit
+  after_create :set_invitation
 
   scope :unlocked, -> { where(locked_at: nil) }
   scope :locked, -> { where.not(locked_at: nil) }
@@ -88,12 +91,25 @@ class User < ActiveRecord::Base
   end
 
   def generate_invitation
-    invitations.create if invitations.count < invitation_limit
+    invitations.create inviter: self if invitations.count < invitation_limit
+  end
+
+  def check_invitation_code
+    invitation = Invitation.where(code: invitation_code)
+    if invitation.any?
+      invitation = invitation.first
+      invitation.available
+    end 
   end
 
   private
 
   def set_invitation_limit
     self.invitation_limit = rand(2..5)
+  end
+
+  def set_invitation
+    invitation = Invitation.where(:code => invitation_code).first
+    invitation.update_attributes(available: false, invitee: self)
   end
 end
