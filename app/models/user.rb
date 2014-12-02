@@ -91,7 +91,8 @@ class User < ActiveRecord::Base
   end
 
   def generate_invitation
-    invitations.create inviter: self if invitations.count < invitation_limit
+    invitations.create inviter: self if !self.admin? && invitations.count < invitation_limit
+    invitations.create inviter: self if self.admin?
   end
 
   def check_invitation_code

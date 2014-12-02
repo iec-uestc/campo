@@ -3,9 +3,6 @@
 .main
   .container
     .row
-      .col-md-3
-        = render 'users/profile', user: @user
-        = render 'users/sidebar'
       .col-md-9
         #invitations.panel
           .panel-body
@@ -20,8 +17,5 @@
               .alert.alert-info role="alert"
                 = t '.no_invitations_yet'
             .js_create_invitation
-                a.btn.btn-info href=new_user_invitation_path(username: current_user.username)
+                a.btn.btn-info href=new_admin_invitation_path
                   = t '.get_invitatioin'
-                span
-                  p.pull-right
-                    = t '.invitations_left', number: @user.invitation_limit - @invitations.count
