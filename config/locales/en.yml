@@ -323,6 +323,12 @@ en:
         confirm_fail: Confirm fail
         confirmation_toke_invalid_or_expired_please_resend: Confirmation toke invalid
           or expired, please resend.
+    invitations:
+      index:
+        get_invitatioin: Get Invitation
+        invitations_left: "You can still get %{number} invitation codes."
+        no_invitations_yet: No invitations yet
+        user_s_invitations: "%{name}'s invitations"
     new:
       choose_a_password: Choose a password
       create_account: Create account

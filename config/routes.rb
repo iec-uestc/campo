@@ -79,6 +79,8 @@ Rails.application.routes.draw do
         get :likes
       end
     end
+    
+    resources :invitations, only: [:index, :new]
 
     root to: 'topics#index'
   end

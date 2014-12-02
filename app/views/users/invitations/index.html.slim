@@ -1,0 +1,26 @@
+- @page_title = t '.user_s_invitations', name: @user.name
+
+.main
+  .container
+    .row
+      .col-md-3
+        = render 'users/profile', user: @user
+        = render 'users/sidebar'
+      .col-md-9
+        #invitations.panel
+          .panel-body
+            - if @invitations.any?
+              .panel.panel-info
+                .panel-heading Your invitation codes are:
+                - for invitation in @invitations
+                  .panel-body
+                    = invitation.code
+            - else
+              .alert.alert-info role="alert"
+                = t '.no_invitations_yet'
+            .js_create_invitation
+                a.btn.btn-info href=new_user_invitation_path(username: current_user.username)
+                  = t '.get_invitatioin'
+                span
+                  p.pull-right
+                    = t '.invitations_left', number: @user.invitation_limit - @invitations.count

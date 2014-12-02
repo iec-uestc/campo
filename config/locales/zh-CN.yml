@@ -314,6 +314,11 @@ zh-CN:
       show:
         confirm_fail: "确认失败"
         confirmation_toke_invalid_or_expired_please_resend: "确认码无效或已过期，请重新发送确认邮件。"
+    invitations:
+      index:
+        get_invitatioin: "获取邀请码"
+        no_invitations_yet: "还没有获取邀请码"
+        user_s_invitations: "%{name}的邀请码"
     likes:
       index:
         no_comment_yet: "还没有评论"
