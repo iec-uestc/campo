@@ -35,6 +35,17 @@ module MarkdownHelper
     end
   end
 
+  def emojify(content)
+    content.to_str.gsub(/:([\w+-]+):/) do |match|
+      if emoji = Emoji.find_by_alias($1)
+        %(<img alt="#$1" src="http://www.emoji-cheat-sheet.com/graphics/emojis/#$1.png" style="vertical-align:middle" width="20" height="20" />)
+      else
+        match
+      end
+    end.html_safe if content.present?
+  end
+
+
   def markdown_text_replace(html)
     doc = Nokogiri::HTML.fragment(html)
     doc.accept(TextReplaceVisitor.new)
@@ -55,9 +66,9 @@ module MarkdownHelper
   end
 
   def markdown_format(text)
-    sanitize(markdown_text_replace(markdown(text)),
+    sanitize(markdown_text_replace(emojify(markdown(text))),
              tags: %w(p br img h1 h2 h3 h4 blockquote pre code strong em a ul ol li span),
-             attributes: %w(href src class title alt target rel))
+             attributes: %w(href src class title alt target rel height width))
   end
 
   def markdown_area(form, name, options = {})

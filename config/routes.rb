@@ -79,6 +79,8 @@ Rails.application.routes.draw do
         get :likes
       end
     end
+    
+    resources :invitations, only: [:index, :create]
 
     root to: 'topics#index'
   end
@@ -129,6 +131,8 @@ Rails.application.routes.draw do
     end
 
     resources :attachments, only: [:index, :destroy]
+
+    resources :invitations, only: [:index, :create]
   end
 
   constraints(AdminConstraint) do
