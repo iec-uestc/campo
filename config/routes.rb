@@ -80,7 +80,7 @@ Rails.application.routes.draw do
       end
     end
     
-    resources :invitations, only: [:index, :new]
+    resources :invitations, only: [:index, :create]
 
     root to: 'topics#index'
   end
@@ -132,7 +132,7 @@ Rails.application.routes.draw do
 
     resources :attachments, only: [:index, :destroy]
 
-    resources :invitations, only: [:index, :new]
+    resources :invitations, only: [:index, :create]
   end
 
   constraints(AdminConstraint) do
