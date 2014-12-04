@@ -1,4 +1,4 @@
-- @page_title = t '.user_s_invitations', name: @user.name
+- @page_title = t '.users_invitations', name: current_user.name
 
 .main
   .container
@@ -17,5 +17,5 @@
               .alert.alert-info role="alert"
                 = t '.no_invitations_yet'
             .js_create_invitation
-                a.btn.btn-info href=new_admin_invitation_path
-                  = t '.get_invitatioin'
+              = form_for :invitation do |f|
+                = f.submit "Get invitation", class:"btn btn-success"

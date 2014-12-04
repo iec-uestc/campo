@@ -4,7 +4,7 @@ class Users::InvitationsController < ApplicationController
     @invitations = @user.invitations
   end
 
-  def new
+  def create
     current_user.generate_invitation
     redirect_to :back
   end

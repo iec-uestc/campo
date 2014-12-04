@@ -77,7 +77,7 @@ en:
         dashboard: Dashboard
     invitations:
       index:
-        get_invitatioin: Get Invitation
+        get_invitatioin: Get invitation
         no_invitations_yet: No invitations yet
         user_s_invitations: "%{name}'s invitations"
         your_invitatioins_are: "Your invitation codes are:"
@@ -331,7 +331,7 @@ en:
           or expired, please resend.
     invitations:
       index:
-        get_invitatioin: Get Invitation
+        get_invitatioin: Get invitation
         invitations_left: "You can still get %{number} invitation codes."
         no_invitations_yet: No invitations yet
         user_s_invitations: "%{name}'s invitations"
