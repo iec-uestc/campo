@@ -1,0 +1,12 @@
+#nprogress {
+  .spinner {
+    top: 13px !important;
+    right: 50% !important;
+    margin-right: -12px;
+    .spinner-icon {
+      width: 24px;
+      height: 24px;
+      animation: 1000ms linear 0s normal none infinite running nprogress-spinner;
+    }
+  }
+}
