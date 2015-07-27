@@ -100,7 +100,7 @@ class User < ActiveRecord::Base
     if invitation.any?
       invitation = invitation.first
       invitation.available
-    end 
+    end
   end
 
   private
@@ -111,6 +111,6 @@ class User < ActiveRecord::Base
 
   def set_invitation
     invitation = Invitation.where(:code => invitation_code).first
-    invitation.update_attributes(available: false, invitee: self)
+    invitation.update_attributes(available: false, invitee: self) if !!invitation
   end
 end
