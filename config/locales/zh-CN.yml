@@ -323,10 +323,12 @@ zh-CN:
     invitations:
       index:
         get_invitatioin: "获取邀请码"
-        invitations_left: "你还能获得%{number}个邀请码"
         no_invitations_yet: "还没有获取邀请码"
         user_s_invitations: "%{name}的邀请码"
         your_invitatioins_are: "你的邀请码有"
+        invitations_left: "你还能获得%{number}个邀请码"
+      create:
+        invitations_left: "你还能获得%{number}个邀请码"
     likes:
       index:
         no_comment_yet: "还没有评论"

@@ -8,6 +8,5 @@ class Users::InvitationsController < Users::ApplicationController
 
   def create
     @invitation = current_user.generate_invitation
-    redirect_back_or_default root_url
   end
 end

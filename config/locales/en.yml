@@ -332,10 +332,12 @@ en:
     invitations:
       index:
         get_invitatioin: Get Invitation
-        invitations_left: "You can still get %{number} invitation codes."
         no_invitations_yet: No invitations yet
         user_s_invitations: "%{name}'s invitations"
         your_invitatioins_are: "Your invitation codes are:"
+        invitations_left: "You can still get %{number} invitation codes."
+      create:
+        invitations_left: "You can still get %{number} invitation codes."
     new:
       choose_a_password: Choose a password
       create_account: Create account

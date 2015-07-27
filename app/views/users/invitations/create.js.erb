@@ -1,0 +1,4 @@
+<% if !!@invitation %>
+$('.invitation_area').append('<%= j(render @invitation) %>');
+$('.invitation_info').text("<%=t '.invitations_left', number: @user.invitation_limit - @user.invitations.count %>")
+<% end %>

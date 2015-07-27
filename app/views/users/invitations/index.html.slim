@@ -10,16 +10,16 @@
         #invitations.panel
           .panel-body
             - if @invitations.any?
-              .panel.panel-info
+              .panel.panel-info.invitation_area
                 .panel-heading
                   = t '.your_invitatioins_are'
                 = render @invitations
             - else
               .alert.alert-info role="alert"
                 = t '.no_invitations_yet'
-            .js_create_invitation
-                = form_for [:user, @invitation] do |f|
+            .create_invitation_area
+                = form_for [:user, @invitation], remote: true do |f|
                   = f.submit class: 'btn btn-success'
                 span
-                  p.pull-right
+                  p.pull-right.invitation_info
                     = t '.invitations_left', number: @user.invitation_limit - @invitations.count

@@ -15,7 +15,7 @@ class Users::InvitationsControllerTest < ActionController::TestCase
     session[:return_to] = '/foo'
     @user.invitation_limit = 10
     assert_difference 'Invitation.count' do
-      post :create, username: @user.username
+      xhr :post, :create, username: @user.username
     end
   end
 
@@ -23,7 +23,7 @@ class Users::InvitationsControllerTest < ActionController::TestCase
     session[:return_to] = '/foo'
     @user.invitation_limit = 0
     assert_no_difference 'Invitation.count' do
-      post :create, username: @user.username
+      xhr :post, :create, username: @user.username
     end
   end
 end
