@@ -13,15 +13,13 @@
               .panel.panel-info
                 .panel-heading
                   = t '.your_invitatioins_are'
-                - for invitation in @invitations
-                  .panel-body
-                    = invitation.code
+                = render @invitations
             - else
               .alert.alert-info role="alert"
                 = t '.no_invitations_yet'
             .js_create_invitation
-                a.btn.btn-info href=new_user_invitation_path(username: current_user.username)
-                  = t '.get_invitatioin'
+                = form_for [:user, @invitation] do |f|
+                  = f.submit class: 'btn btn-success'
                 span
                   p.pull-right
                     = t '.invitations_left', number: @user.invitation_limit - @invitations.count

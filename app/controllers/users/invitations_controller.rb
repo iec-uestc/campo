@@ -1,11 +1,13 @@
-class Users::InvitationsController < ApplicationController
+class Users::InvitationsController < Users::ApplicationController
+  before_action :login_required
+
   def index
-    @user = User.where('lower(username) = ?', params[:username].downcase).first!
+    @invitation = Invitation.new
     @invitations = @user.invitations
   end
 
-  def new
-    current_user.generate_invitation
-    redirect_to :back
+  def create
+    @invitation = current_user.generate_invitation
+    redirect_back_or_default root_url
   end
 end
