@@ -4,6 +4,13 @@ $(document).on 'page:update', ->
     box_left = $(this).position().left - $box.outerWidth()/2 + 10;
     box_top = $(this).position().top - $box.outerHeight() - 10;
 
+    html = $box.html()
+    unless html.includes('canvas')
+      code = $box.parent().text();
+      invitation_id = $box.parent().data('id');
+      url = "#{invitation_url}/#{invitation_id}";
+      $box.qrcode {width: 125, height: 125, text: "#{url}"};
+
     $box.css('top', "#{box_top}px");
     $box.css('left', "#{box_left}px");
     $box.css('display', 'block');

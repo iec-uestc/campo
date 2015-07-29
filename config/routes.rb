@@ -80,7 +80,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :invitations, only: [:index, :create]
+    resources :invitations, only: [:index, :create, :show]
 
     root to: 'topics#index'
   end
