@@ -1,2 +1,4 @@
 .panel-body
   = invitation.code
+  - if !invitation.available
+    = icon 'lock'
