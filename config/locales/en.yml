@@ -143,6 +143,7 @@ en:
       logout: Logout
       profile: Profile
       settings: Settings
+      invite: Invitation
       sign_in: Sign in
       sign_up: Sign up
       topics: Topics
@@ -331,10 +332,10 @@ en:
           or expired, please resend.
     invitations:
       index:
-        get_invitatioin: Get Invitation
+        get_invitation: Invite!
         no_invitations_yet: No invitations yet
         user_s_invitations: "%{name}'s invitations"
-        your_invitatioins_are: "Your invitation codes are:"
+        your_invitatioins_are: "Congratulations!Invite your friends with the invitation codes:"
         invitations_left: "You can still get %{number} invitation codes."
       create:
         invitations_left: "You can still get %{number} invitation codes."

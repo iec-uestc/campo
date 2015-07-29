@@ -140,6 +140,7 @@ zh-CN:
       logout: "退出"
       profile: "个人资料"
       settings: "设置"
+      invite: "邀请"
       sign_in: "登录"
       sign_up: "注册"
       topics: "话题"
@@ -322,13 +323,13 @@ zh-CN:
         confirmation_toke_invalid_or_expired_please_resend: "确认码无效或已过期，请重新发送确认邮件。"
     invitations:
       index:
-        get_invitatioin: "获取邀请码"
+        get_invitation: "获取邀请码"
         no_invitations_yet: "还没有获取邀请码"
         user_s_invitations: "%{name}的邀请码"
-        your_invitatioins_are: "你的邀请码有"
-        invitations_left: "你还能获得%{number}个邀请码"
+        your_invitatioins_are: "有了邀请码快去邀请朋友吧！"
+        invitations_left: "你还能获得 %{number} 个邀请码"
       create:
-        invitations_left: "你还能获得%{number}个邀请码"
+        invitations_left: "你还能获得 %{number} 个邀请码"
     likes:
       index:
         no_comment_yet: "还没有评论"

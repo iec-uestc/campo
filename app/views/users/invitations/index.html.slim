@@ -20,8 +20,8 @@
               = form_for [:user, @invitation], remote: true do |f|
                 span
                   - if @user.invitation_limit - @user.invitations.count == 0
-                    = f.submit class: 'btn btn-success', disabled: 'disabled'
+                    = f.submit t('.get_invitation'), class: 'btn btn-success', disabled: 'disabled'
                   -else
-                    = f.submit class: 'btn btn-success'
+                    = f.submit t('.get_invitation'), class: 'btn btn-success'
                   p.pull-right.invitation_info
                     = t '.invitations_left', number: @user.invitation_limit - @invitations.count
