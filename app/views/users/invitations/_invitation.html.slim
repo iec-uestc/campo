@@ -1,4 +1,6 @@
 .panel-body
+  .qrbox
   = invitation.code
   - if !invitation.available
     = icon 'lock'
+  = icon 'share-square-o', class: 'pull-right'
