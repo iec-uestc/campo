@@ -8,3 +8,19 @@
 .fa-lock {
   margin-left: 5px;
 }
+
+.qrbox {
+  height: 170px;
+  width: 145px;
+  background-color: white;
+  display: none;
+  border: 10px solid white;
+  box-shadow: 0 2px 7px rgba(68, 68, 68, .5);
+  position: absolute;
+  z-index: 1;
+
+  &::after {
+    content: '扫一扫分享给朋友';
+    font-size: 15px;
+  }
+}
