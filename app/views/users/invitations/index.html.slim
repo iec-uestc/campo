@@ -9,17 +9,19 @@
       .col-md-9
         #invitations.panel
           .panel-body
-            - if @invitations.any?
-              .panel.panel-info.invitation_area
-                .panel-heading
+            .panel.panel-info.invitation_area
+              .panel-heading.invitation_head
+                - if @invitations.any?
                   = t '.your_invitatioins_are'
-                = render @invitations
-            - else
-              .alert.alert-info role="alert"
-                = t '.no_invitations_yet'
+                - else
+                  = t '.no_invitations_yet'
+              = render @invitations
             .create_invitation_area
-                = form_for [:user, @invitation], remote: true do |f|
-                  = f.submit class: 'btn btn-success'
+              = form_for [:user, @invitation], remote: true do |f|
                 span
+                  - if @user.invitation_limit - @user.invitations.count == 0
+                    = f.submit class: 'btn btn-success', disabled: 'disabled'
+                  -else
+                    = f.submit class: 'btn btn-success'
                   p.pull-right.invitation_info
                     = t '.invitations_left', number: @user.invitation_limit - @invitations.count

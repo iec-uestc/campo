@@ -2,3 +2,7 @@
 $('.invitation_area').append('<%= j(render @invitation) %>');
 $('.invitation_info').text("<%=t '.invitations_left', number: @user.invitation_limit - @user.invitations.count %>")
 <% end %>
+
+<% if @user.invitation_limit - @user.invitations.count == 0%>
+$('.btn-success').attr('disabled', 'disabled')
+<% end %>
