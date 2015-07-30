@@ -8,10 +8,14 @@
           .panel-body.invitation_heading
             = icon 'hand-o-up', class: 'pull-right'
             p.pull-right.tips Click the button to share!
-          .panel-body
-            p Your invitation code is:
-            .invitation_box
-              p = @invitation.code
-            p Click the following button to sign up with the invitation code
-            .signup_with_invitation
-              a.btn.btn-success href="#{signup_url}" Sign Up Now
+            p Tsemple
+            p
+              | Invitation from
+              a< href="#{user_root_url(@invitation.inviter.username)}" ="@#{@invitation.inviter.username}"
+            .invitation_info_area
+              p Your invitation code is:
+              .invitation_box
+                p = @invitation.code
+              p Click the following button to sign up with the invitation code
+              .signup_with_invitation
+                a.btn.btn-success href="#{signup_url}?invitation_code=#{@invitation.code}" Sign Up Now
