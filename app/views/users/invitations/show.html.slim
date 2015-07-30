@@ -15,7 +15,7 @@
             .invitation_info_area
               p = t '.your_invitation_is'
               .invitation_box
-                p = @invitation.code
+                p = @invitation_code
               p = t '.click_to_signup'
               .signup_with_invitation
                 a.btn.btn-success href="#{signup_url}?invitation_code=#{@invitation.code}" = t '.signup_now'

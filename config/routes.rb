@@ -80,7 +80,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :invitations, only: [:index, :create, :show]
+    resources :invitations, only: [:index, :create]
+    get '/invitations/:invitation_code', to: 'invitations#show'
 
     root to: 'topics#index'
   end

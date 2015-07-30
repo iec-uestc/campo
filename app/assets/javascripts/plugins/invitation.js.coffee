@@ -7,8 +7,7 @@ $(document).on 'page:update', ->
     html = $box.html()
     unless html.includes('canvas')
       code = $box.parent().text();
-      invitation_id = $box.parent().data('id');
-      url = "#{invitation_url}/#{invitation_id}";
+      url = "#{invitation_url}"+"/#{code.replace(/(^\s*)/g,"")}";
       $box.qrcode {width: 125, height: 125, text: "#{url}"};
 
     $box.css('top', "#{box_top}px");

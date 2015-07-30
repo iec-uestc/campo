@@ -11,6 +11,7 @@ class Users::InvitationsController < Users::ApplicationController
   end
 
   def show
-    @invitation = Invitation.find(params[:id])
+    @invitation_code = params[:invitation_code]
+    @invitation = Invitation.find_by(code: @invitation_code)
   end
 end
