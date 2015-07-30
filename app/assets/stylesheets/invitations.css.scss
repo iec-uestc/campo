@@ -1,4 +1,4 @@
-.invitation_area {
+.invitation_area, .invitation_used_area {
   .panel-body:hover {
     font-size: 17px;
     background-color: #f5f5f5;
@@ -6,13 +6,9 @@
 }
 
 @media screen and (max-width: 650px) {
-  .fa-lock, .share-icon {
+  .share-icon {
     visibility: hidden;
   }
-}
-
-.fa-lock {
-  margin-left: 5px;
 }
 
 .qrbox {

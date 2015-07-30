@@ -331,6 +331,7 @@ en:
         user_s_invitations: "%{name}'s invitations"
         your_invitatioins_are: "Congratulations!Invite your friends with the invitation codes:"
         invitations_left: "You can still get %{number} invitation codes."
+        invitations_used: "The invitations used:"
       create:
         invitations_left: "You can still get %{number} invitation codes."
       show:

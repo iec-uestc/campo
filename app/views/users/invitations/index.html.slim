@@ -16,6 +16,12 @@
                 - else
                   = t '.no_invitations_yet'
               = render @invitations
+          .panel-body
+            .panel.panel-info.invitation_used_area
+              .panel-heading.invitation_head
+                - if @invitations_used.any?
+                  = t '.invitations_used'
+              = render @invitations_used
             .create_invitation_area
               = form_for [:user, @invitation], remote: true do |f|
                 span

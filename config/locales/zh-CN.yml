@@ -322,6 +322,7 @@ zh-CN:
         user_s_invitations: "%{name}的邀请码"
         your_invitatioins_are: "有了邀请码快去邀请朋友吧！"
         invitations_left: "你还能获得 %{number} 个邀请码"
+        invitations_used: "已经使用过的邀请码"
       create:
         invitations_left: "你还能获得 %{number} 个邀请码"
       show:
