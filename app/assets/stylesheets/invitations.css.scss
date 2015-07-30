@@ -24,3 +24,30 @@
     font-size: 15px;
   }
 }
+
+.invitation_heading {
+
+  .fa-hand-o-up {
+    margin-left: .5em;
+  }
+}
+
+.invitation_box {
+  width: 80%;
+  height: auto;
+  background-color: #fcf8e3;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signup_with_invitation {
+  width: 80%;
+  margin: 0 auto;
+
+  .btn {
+    width: 100%;
+  }
+}
