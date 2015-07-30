@@ -330,6 +330,13 @@ zh-CN:
         invitations_left: "你还能获得 %{number} 个邀请码"
       create:
         invitations_left: "你还能获得 %{number} 个邀请码"
+      show:
+        invitation: "邀请"
+        click_to_share: "点击按钮分享！"
+        invitation_from: "邀请者"
+        your_invitation_is: "你的邀请码是："
+        click_to_signup: "点击下方按扭直接注册"
+        signup_now: "现在注册"
     likes:
       index:
         no_comment_yet: "还没有评论"

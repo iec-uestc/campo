@@ -339,6 +339,13 @@ en:
         invitations_left: "You can still get %{number} invitation codes."
       create:
         invitations_left: "You can still get %{number} invitation codes."
+      show:
+        invitation: Invitation
+        click_to_share: Click the button to share!
+        invitation_from: "Invitation from"
+        your_invitation_is: "Your invitation code is:"
+        click_to_signup: Click the following button to sign up with the invitation code
+        signup_now: Sign Up Now
     new:
       choose_a_password: Choose a password
       create_account: Create account
