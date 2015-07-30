@@ -75,12 +75,6 @@ en:
     dashboard:
       show:
         dashboard: Dashboard
-    invitations:
-      index:
-        get_invitatioin: Get Invitation
-        no_invitations_yet: No invitations yet
-        user_s_invitations: "%{name}'s invitations"
-        your_invitatioins_are: "Your invitation codes are:"
     topics:
       flashes:
         successfully_restored: Successfully restored

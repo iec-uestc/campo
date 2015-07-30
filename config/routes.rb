@@ -131,8 +131,6 @@ Rails.application.routes.draw do
     end
 
     resources :attachments, only: [:index, :destroy]
-
-    resources :invitations, only: [:index, :new]
   end
 
   constraints(AdminConstraint) do

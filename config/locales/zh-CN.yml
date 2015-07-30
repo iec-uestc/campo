@@ -73,12 +73,6 @@ zh-CN:
     dashboard:
       show:
         dashboard: "控制台"
-    invitations:
-      index:
-        get_invitatioin: "获取邀请码"
-        no_invitations_yet: "还没有获取邀请码"
-        user_s_invitations: "%{name}的邀请码"
-        your_invitatioins_are: "你的邀请码有"
     topics:
       flashes:
         successfully_restored: "成功还原话题"
