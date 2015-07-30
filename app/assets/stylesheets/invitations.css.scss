@@ -5,6 +5,12 @@
   }
 }
 
+@media screen and (max-width: 650px) {
+  .fa-lock, .share-icon {
+    visibility: hidden;
+  }
+}
+
 .fa-lock {
   margin-left: 5px;
 }
