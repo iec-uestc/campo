@@ -19,12 +19,13 @@
             .create_invitation_area
               = form_for [:user, @invitation], remote: true do |f|
                 span
-                  - if @user.invitation_limit - @user.invitations.count == 0
+                  - if !@user.admin? && (@user.invitation_limit - @user.invitations.count == 0)
                     = f.submit t('.get_invitation'), class: 'btn btn-success', disabled: 'disabled'
-                  -else
+                  - else
                     = f.submit t('.get_invitation'), class: 'btn btn-success'
-                  p.pull-right.invitation_info
-                    = t '.invitations_left', number: @user.invitation_limit - @invitations.count
+                  - unless @user.admin?
+                    p.pull-right.invitation_info
+                      = t '.invitations_left', number: @user.invitation_limit - @invitations.count
 
 javascript:
   var invitation_url = "#{user_invitations_url}";
