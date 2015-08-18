@@ -11,7 +11,7 @@ class Invitation < ActiveRecord::Base
   def generate_code
     begin
       self.code = SecureRandom.urlsafe_base64
-    end while self.class.where(code: self.code).any?
+    end while self.class.exists?(code: self.code)
   end
 
 end
