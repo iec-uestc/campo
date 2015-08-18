@@ -91,19 +91,11 @@ class User < ActiveRecord::Base
   end
 
   def generate_invitation
-    if self.admin?
-      invitations.create inviter: self
-    else
-      invitations.create inviter: self if invitations.count < invitation_limit
-    end
+    invitations.create inviter: self if self.admin? || invitations.count < invitation_limit
   end
 
   def check_invitation_code
-    invitation = Invitation.where(code: invitation_code)
-    if invitation.any?
-      invitation = invitation.first
-      invitation.available
-    end
+    Invitation.find_by(code: invitation_code).try(:available)
   end
 
   private
@@ -114,6 +106,6 @@ class User < ActiveRecord::Base
 
   def set_invitation
     invitation = Invitation.where(:code => invitation_code).first
-    invitation.update_attributes(available: false, invitee: self) if !!invitation
+    invitation.update_attributes(available: false, invitee: self) if invitation
   end
 end
