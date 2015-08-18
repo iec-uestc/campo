@@ -13,7 +13,7 @@ class Users::InvitationsControllerTest < ActionController::TestCase
 
   test "should generate invitation code in limit" do
     session[:return_to] = '/foo'
-    @user.invitation_limit = 10
+    @user.update(invitation_limit: 10)
     assert_difference 'Invitation.count' do
       xhr :post, :create, username: @user.username
     end
@@ -21,7 +21,7 @@ class Users::InvitationsControllerTest < ActionController::TestCase
 
   test "should not generate invitation code out of limit" do
     session[:return_to] = '/foo'
-    @user.invitation_limit = 0
+    @user.update(invitation_limit: 0)
     assert_no_difference 'Invitation.count' do
       xhr :post, :create, username: @user.username
     end
