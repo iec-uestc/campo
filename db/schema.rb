@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127082413) do
+ActiveRecord::Schema.define(version: 20150730083628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141127082413) do
     t.datetime "updated_at"
   end
 
+  add_index "invitations", ["code"], name: "index_invitations_on_code", unique: true, using: :btree
   add_index "invitations", ["inviter_id"], name: "index_invitations_on_inviter_id", using: :btree
 
   create_table "likes", force: true do |t|
