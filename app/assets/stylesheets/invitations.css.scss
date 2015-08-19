@@ -18,7 +18,7 @@
   border: 10px solid white;
   box-shadow: 0 2px 7px rgba(68, 68, 68, .5);
   position: absolute;
-  z-index: 1;
+  z-index: 1001;
 
   &::after {
     content: '扫一扫分享给朋友';
