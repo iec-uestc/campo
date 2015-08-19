@@ -16,3 +16,9 @@ $(document).on 'page:update', ->
 
   $('.share-icon').mouseout ->
     $(this).parent().children(':first').css('display', 'none');
+
+  $('.invitation_area > .invitation_row').click ->
+    code = $(this).text();
+    url = "#{invitation_url}"+"/#{code.replace(/(^\s*)/g,"")}";
+
+    window.open url;
