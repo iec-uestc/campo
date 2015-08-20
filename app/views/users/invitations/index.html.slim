@@ -31,7 +31,7 @@
                     = f.submit t('.get_invitation'), class: 'btn btn-success'
                   - unless @user.admin?
                     p.pull-right.invitation_info
-                      = t '.invitations_left', number: @user.invitation_limit - @invitations.count
+                      = t '.invitations_left', number: @user.invitation_limit - @user.invitations.count
 
 javascript:
   var invitation_url = "#{user_invitations_url}";
