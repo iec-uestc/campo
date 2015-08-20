@@ -14,6 +14,11 @@ $(document).on 'page:update', ->
     $box.css('left', "#{box_left}px");
     $box.css('display', 'block');
 
+    if $(window).scrollTop()>$box.offset().top
+      box_top = $(this).position().top + 25;
+      $box.css('top', "#{box_top}px");
+
+
   $('.share-icon').mouseout ->
     $(this).parent().children(':first').css('display', 'none');
 
