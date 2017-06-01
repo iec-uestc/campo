@@ -47,7 +47,11 @@ html
                     = t '.topics'
                 li
                   a href=likes_user_comments_path(username: current_user.username)
-                    = t '.comments'
+                    =  'comments'
+                li.divider
+                li
+                  a href=user_invitations_path(username: current_user.username)
+                    = t '.invite'
                 li.divider
                 li
                   a href=settings_account_path

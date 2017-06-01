@@ -43,5 +43,7 @@ html
             li class=('active' if controller_name == 'attachments')
               a href=admin_attachments_path
                 = t '.attachments'
-
+            li class=('active' if controller_name == 'invitations')
+              a href=admin_invitations_path
+                = t '.invitations'
     = yield
